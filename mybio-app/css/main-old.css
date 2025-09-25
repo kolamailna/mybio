@@ -1,0 +1,570 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Remove dotted borders and outlines */
+*:focus, *:active {
+    outline: none !important;
+}
+
+/* Remove any debugging borders and dotted outlines */
+* {
+    border-style: solid !important;
+}
+
+/* Specifically remove dotted borders */
+*[style*="dotted"], *[style*="dashed"] {
+    border: none !important;
+}
+
+/* Remove browser debugging outlines */
+* {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* Override any external debugging styles */
+.card-item, .edit-btn, .control-btn {
+    border-style: solid !important;
+    outline: none !important;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    line-height: 1.5;
+    min-height: 100vh;
+    overflow-x: hidden;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/* App Container */
+.app-container {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Profile Section */
+.profile-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/* Top Controls */
+.top-controls {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    right: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+}
+
+.control-btn {
+    width: 38px;
+    height: 38px;
+    border: none !important;
+    border-radius: 19px;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.control-btn:hover {
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.control-btn:active {
+    transform: scale(0.95);
+}
+
+.user-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #8e44ad;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+/* Profile Preview */
+.profile-preview {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-background {
+    background: linear-gradient(135deg, #8e44ad, #9b59b6);
+    padding: 60px 20px 40px;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+.profile-background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 15px;
+    background: linear-gradient(rgba(0, 0, 0, 0.2), transparent);
+    pointer-events: none;
+}
+
+.profile-content {
+    position: relative;
+    z-index: 2;
+}
+
+.profile-avatar-large {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+    color: white;
+    font-weight: 700;
+    font-size: 32px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+}
+
+.profile-name {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.profile-bio {
+    font-size: 16px;
+    opacity: 0.9;
+    max-width: 280px;
+    margin: 0 auto;
+}
+
+/* Profile Cards */
+.profile-cards {
+    flex: 1;
+    padding: 20px;
+    background-color: white;
+    border-radius: 20px 20px 0 0;
+    margin-top: -20px;
+    position: relative;
+    z-index: 3;
+    min-height: 300px;
+}
+
+.card-item {
+    background-color: #f8f9fa;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+    border: 1px solid #e9ecef !important;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.card-item:hover {
+    background-color: #f1f3f4;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-item:active {
+    transform: translateY(0);
+}
+
+.card-content h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.card-content p {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Bottom Action */
+.bottom-action {
+    padding: 20px;
+    background-color: white;
+    border-top: 1px solid #e9ecef !important;
+}
+
+.edit-btn {
+    width: 100%;
+    height: 48px;
+    background-color: #8e44ad;
+    color: white;
+    border: none;
+    border-radius: 24px;
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.edit-btn:hover {
+    background-color: #7d3c98;
+}
+
+.edit-btn:active {
+    transform: scale(0.98);
+}
+
+/* Settings Modal (Full Screen Overlay) */
+.settings-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: white;
+    z-index: 1000;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    visibility: hidden;
+}
+
+.settings-modal.active {
+    transform: translateX(0);
+    visibility: visible;
+}
+
+.settings-content {
+    flex: 1;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Settings Header */
+.settings-header {
+    display: flex;
+    align-items: center;
+    padding: 16px 20px;
+    border-bottom: 1px solid #e0e0e0;
+    background-color: white;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    padding: 4px;
+    margin-right: 16px;
+}
+
+.close-btn:hover {
+    color: #333;
+}
+
+.settings-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    flex: 1;
+    text-align: center;
+    margin-right: 40px; /* Compensate for close button */
+}
+
+/* Account Info */
+.account-info {
+    padding: 16px 20px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.account-label {
+    font-size: 14px;
+    color: #999;
+    margin: 0;
+}
+
+.account-name {
+    color: #333;
+    font-weight: 500;
+}
+
+/* Settings Menu */
+.settings-menu {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    padding: 16px 20px;
+    text-decoration: none;
+    color: #333;
+    border-bottom: 1px solid #f8f8f8;
+    transition: background-color 0.2s;
+    min-height: 56px;
+}
+
+.menu-item:hover {
+    background-color: #f8f8f8;
+}
+
+.menu-item:active {
+    background-color: #f0f0f0;
+}
+
+.menu-text {
+    flex: 1;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.menu-value {
+    font-size: 14px;
+    color: #999;
+    margin-right: 8px;
+}
+
+.plan-value {
+    color: #f39c12;
+    font-weight: 500;
+}
+
+.menu-arrow {
+    font-size: 18px;
+    color: #ccc;
+    font-weight: 300;
+}
+
+.external-icon, .copy-icon, .logout-icon {
+    font-size: 14px;
+    color: #999;
+}
+
+/* Section Divider */
+.section-divider {
+    padding: 20px 20px 8px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.section-label {
+    font-size: 12px;
+    color: #999;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* Special Menu Items */
+.menu-item.logout {
+    color: #e74c3c;
+}
+
+.menu-item.logout .menu-text {
+    color: #e74c3c;
+}
+
+/* Branding */
+.branding {
+    padding: 20px;
+    text-align: center;
+    font-size: 12px;
+    color: #999;
+    background-color: #f8f8f8;
+    border-top: 1px solid #e0e0e0;
+}
+
+/* Toast Notification */
+.toast {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-100px);
+    background-color: #333;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 24px;
+    font-size: 14px;
+    font-weight: 500;
+    z-index: 10000;
+    opacity: 0;
+    transition: all 0.3s ease;
+    max-width: calc(100% - 40px);
+    text-align: center;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+.toast.success {
+    background-color: #27ae60;
+}
+
+.toast.error {
+    background-color: #e74c3c;
+}
+
+/* Touch and Swipe Enhancements */
+.settings-modal {
+    touch-action: pan-y;
+}
+
+/* Animations */
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideOutRight {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(100%);
+    }
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    .app-container {
+        max-width: 400px;
+        margin: 0 auto;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .settings-modal {
+        max-width: 400px;
+        left: 50%;
+        transform: translateX(-50%) translateX(100%);
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+    
+    .settings-modal.active {
+        transform: translateX(-50%) translateX(0);
+    }
+}
+
+/* Safe Area Support for iOS */
+@supports (padding-top: env(safe-area-inset-top)) {
+    .top-controls {
+        top: calc(16px + env(safe-area-inset-top));
+    }
+    
+    .profile-background {
+        padding-top: calc(60px + env(safe-area-inset-top));
+    }
+    
+    .settings-header {
+        padding-top: calc(16px + env(safe-area-inset-top));
+    }
+    
+    .bottom-action {
+        padding-bottom: calc(20px + env(safe-area-inset-bottom));
+    }
+    
+    .branding {
+        padding-bottom: calc(20px + env(safe-area-inset-bottom));
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #1a1a1a;
+        color: #fff;
+    }
+    
+    .app-container {
+        background-color: #1a1a1a;
+    }
+    
+    .profile-cards {
+        background-color: #2d2d2d;
+    }
+    
+    .card-item {
+        background-color: #3d3d3d;
+        border-color: #4d4d4d;
+        color: #fff;
+    }
+    
+    .card-content h3 {
+        color: #fff;
+    }
+    
+    .card-content p {
+        color: #ccc;
+    }
+    
+    .bottom-action {
+        background-color: #2d2d2d;
+        border-color: #4d4d4d;
+    }
+    
+    .settings-modal {
+        background-color: #2d2d2d;
+    }
+    
+    .settings-header {
+        background-color: #2d2d2d;
+        border-color: #4d4d4d;
+    }
+    
+    .settings-title {
+        color: #fff;
+    }
+    
+    .menu-item {
+        color: #fff;
+        border-color: #4d4d4d;
+    }
+    
+    .menu-item:hover {
+        background-color: #3d3d3d;
+    }
+    
+    .branding {
+        background-color: #3d3d3d;
+        border-color: #4d4d4d;
+    }
+}

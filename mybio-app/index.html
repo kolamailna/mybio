@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, minimal-ui">
+    <meta name="theme-color" content="#000000">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>medtass | Profile | Your Tap Bio dashboard</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <!-- Application Root -->
+    <div id="application-root">
+        
+        <!-- Main Dashboard -->
+        <div class="dashboard-page" id="mainDashboard">
+            
+            <!-- Profile Card Container -->
+            <div class="profile-card-container">
+                
+                <!-- Top Controls -->
+                <div class="top-controls">
+                    <button class="control-btn back-btn" id="backBtn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    
+                    <button class="control-btn settings-btn" id="settingsBtn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+                            <path d="M12 1v6m0 6v6m11-7h-6m-6 0H1" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </button>
+                    
+                    <button class="control-btn user-btn" id="userBtn">
+                        <div class="user-avatar">
+                            <span>M</span>
+                        </div>
+                    </button>
+                </div>
+
+                <!-- Profile Background Section -->
+                <div class="profile-background-section">
+                    <div class="profile-content">
+                        <div class="profile-avatar-large">
+                            <span>M</span>
+                        </div>
+                        <h1 class="profile-name">medtass</h1>
+                        <p class="profile-bio">Tap to Add a Description about Yourself</p>
+                    </div>
+                </div>
+                
+                <!-- Profile Links Section -->
+                <div class="profile-links-section">
+                    <div class="link-item">
+                        <div class="link-content">
+                            <h3>My Website</h3>
+                            <p>Check out my latest work</p>
+                        </div>
+                    </div>
+                    
+                    <div class="link-item">
+                        <div class="link-content">
+                            <h3>Instagram</h3>
+                            <p>Follow me @medtass</p>
+                        </div>
+                    </div>
+                    
+                    <div class="link-item">
+                        <div class="link-content">
+                            <h3>Contact</h3>
+                            <p>Get in touch</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Edit Button -->
+                <div class="edit-section">
+                    <button class="edit-btn" id="editBtn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                            <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="m18.5 2.5 3 3L12 15l-4 1 1-4 9.5-9.5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Edit card
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Edit Profile Page -->
+        <div class="edit-profile-page" id="editProfilePage" style="display: none;">
+            
+            <!-- Navigation Header -->
+            <div class="nav-header">
+                <button class="nav-btn back-btn" id="editBackBtn">Back</button>
+                <h1 class="nav-title">Profile Card</h1>
+                <button class="nav-btn save-btn" id="saveBtn">Save</button>
+            </div>
+
+            <!-- Profile Photo Section -->
+            <div class="profile-photo-section">
+                <div class="photo-background">
+                    <button class="change-photo-btn" id="changePhotoBtn">
+                        Change profile photo
+                    </button>
+                </div>
+            </div>
+
+            <!-- Avatar Selection -->
+            <div class="avatar-section">
+                <label class="field-label">AVATAR</label>
+                <div class="avatar-options">
+                    <div class="avatar-option upload-option">
+                        <input type="file" id="avatarUpload" accept="image/*" style="display: none;">
+                        <label for="avatarUpload" class="upload-label">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" stroke="currentColor" stroke-width="2"/>
+                                <polyline points="7,10 12,15 17,10" stroke="currentColor" stroke-width="2"/>
+                                <line x1="12" y1="15" x2="12" y2="3" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </label>
+                    </div>
+                    <div class="avatar-option text-option selected">
+                        <span>M</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Form Fields -->
+            <div class="form-section">
+                <div class="form-group">
+                    <label class="field-label">NAME</label>
+                    <input type="text" class="form-input" id="nameInput" placeholder="Tap to add your name">
+                </div>
+
+                <div class="form-group">
+                    <label class="field-label">TITLE (WHAT YOU DO)</label>
+                    <input type="text" class="form-input" id="titleInput" placeholder="Tap to add your title">
+                </div>
+
+                <div class="form-group">
+                    <label class="field-label">BIO</label>
+                    <textarea class="form-textarea" id="bioInput" placeholder="Tap to add your bio"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label class="field-label">WEBSITE</label>
+                    <input type="url" class="form-input" id="websiteInput" placeholder="Tap to add your URL">
+                </div>
+
+                <div class="form-group">
+                    <label class="field-label">EMAIL</label>
+                    <input type="email" class="form-input" id="emailInput" placeholder="Tap to add your email" value="medtass124@gmail.com">
+                </div>
+            </div>
+        </div>
+
+        <!-- Account Settings Page -->
+        <div class="account-settings-page" id="accountSettingsPage" style="display: none;">
+            
+            <!-- Navigation Header -->
+            <div class="nav-header">
+                <button class="nav-btn close-btn" id="settingsCloseBtn">Close</button>
+                <h1 class="nav-title">Your Account</h1>
+                <div class="nav-spacer"></div>
+            </div>
+
+            <!-- Account Info -->
+            <div class="account-info">
+                <p class="account-label">Account: medtass</p>
+            </div>
+
+            <!-- Settings Menu -->
+            <div class="settings-menu">
+                <div class="menu-item" data-action="your-cards">
+                    <span class="menu-text">Your Cards</span>
+                    <span class="menu-arrow">›</span>
+                </div>
+                
+                <div class="menu-item" data-action="switch-accounts">
+                    <span class="menu-text">Switch Accounts</span>
+                    <span class="menu-value">medtass</span>
+                    <span class="menu-arrow">›</span>
+                </div>
+                
+                <div class="menu-item" data-action="account-access">
+                    <span class="menu-text">Account Access</span>
+                    <span class="menu-arrow">›</span>
+                </div>
+                
+                <div class="menu-item" data-action="notifications">
+                    <span class="menu-text">Account Notifications</span>
+                    <span class="menu-arrow">›</span>
+                </div>
+                
+                <div class="menu-item" data-action="edit-profile">
+                    <span class="menu-text">Edit Profile</span>
+                    <span class="menu-arrow">›</span>
+                </div>
+                
+                <div class="menu-item" data-action="change-username">
+                    <span class="menu-text">Change Username</span>
+                    <span class="menu-arrow">›</span>
+                </div>
+
+                <!-- Billing Section -->
+                <div class="section-divider">
+                    <span class="section-label">Billing</span>
+                </div>
+
+                <div class="menu-item" data-action="your-plan">
+                    <span class="menu-text">Your Plan</span>
+                    <span class="menu-value plan-value">Gold (trial)</span>
+                    <span class="menu-arrow">›</span>
+                </div>
+
+                <!-- Action Items -->
+                <div class="menu-item" data-action="follower-view">
+                    <span class="menu-text">Follower View</span>
+                    <span class="menu-arrow">›</span>
+                </div>
+                
+                <div class="menu-item" data-action="copy-link">
+                    <span class="menu-text">Copy Profile Link</span>
+                    <span class="menu-arrow">›</span>
+                </div>
+                
+                <div class="menu-item logout" data-action="logout">
+                    <span class="menu-text">Logout</span>
+                    <span class="menu-arrow">›</span>
+                </div>
+
+                <!-- Footer Links -->
+                <div class="menu-item" data-action="privacy">
+                    <span class="menu-text">Privacy Policy</span>
+                    <span class="menu-arrow">›</span>
+                </div>
+                
+                <div class="menu-item" data-action="terms">
+                    <span class="menu-text">Terms of Service</span>
+                    <span class="menu-arrow">›</span>
+                </div>
+                
+                <div class="menu-item" data-action="support">
+                    <span class="menu-text">Support</span>
+                    <span class="menu-arrow">›</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Made with Tap Bio Branding -->
+    <div class="branding">
+        Made with Tap Bio.
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
